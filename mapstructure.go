@@ -80,7 +80,7 @@ type DecoderConfig struct {
 	Result interface{}
 
 	// The tag name that mapstructure reads for field names. This
-	// defaults to "mapstructure"
+	// defaults to "json"
 	TagName string
 }
 
@@ -163,7 +163,7 @@ func NewDecoder(config *DecoderConfig) (*Decoder, error) {
 	}
 
 	if config.TagName == "" {
-		config.TagName = "mapstructure"
+		config.TagName = "json"
 	}
 
 	result := &Decoder{
